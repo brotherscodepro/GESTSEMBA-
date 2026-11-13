@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
@@ -345,6 +345,78 @@ footer{
 .partner-cta{
   margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;
 }
+
+/* ---------- paywall modal ---------- */
+.btn-gold{
+  background:var(--gold);color:#1B2420;padding:13px 22px;border-radius:3px;
+  font-weight:700;font-size:0.92rem;text-decoration:none;display:inline-block;
+  border:none;cursor:pointer;font-family:inherit;
+}
+.modal-overlay{
+  display:none;
+  position:fixed;inset:0;z-index:50;
+  background:rgba(10,14,10,0.6);
+  align-items:center;justify-content:center;
+  padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal-box{
+  background:var(--surface);color:var(--ink);
+  border-radius:6px;max-width:420px;width:100%;
+  padding:32px 28px;position:relative;
+  border:1px solid var(--line);
+}
+.modal-box .modal-close{
+  position:absolute;top:14px;right:14px;
+  width:32px;height:32px;border-radius:3px;border:1px solid var(--line);
+  background:transparent;color:var(--ink-soft);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+.modal-box .m-eyebrow{
+  font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;display:block;
+}
+.modal-box h3{font-size:1.3rem;margin-bottom:12px}
+.modal-box .m-price{
+  font-family:var(--font-display);font-weight:700;font-size:2.2rem;color:var(--green);
+  margin-bottom:4px;
+}
+.modal-box .m-price-note{font-size:0.8rem;color:var(--ink-soft);margin-bottom:20px}
+.modal-box p.m-body{font-size:0.92rem;color:var(--ink-soft);margin-bottom:22px}
+.modal-box .m-actions{display:flex;flex-direction:column;gap:10px}
+.modal-box .m-actions a{text-align:center}
+
+/* ---------- lock wrapper ---------- */
+.locked-content{
+  position:relative;
+}
+.locked-content.is-locked .locked-inner{
+  filter:blur(7px);
+  user-select:none;
+  pointer-events:none;
+}
+.lock-banner{
+  display:none;
+  position:sticky;
+  top:calc(65px + env(safe-area-inset-top,0px));
+  z-index:30;
+  margin:0 auto;
+  max-width:480px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:6px;
+  box-shadow:0 12px 32px rgba(0,0,0,0.25);
+  padding:22px 22px 20px;
+  text-align:center;
+}
+.locked-content.is-locked .lock-banner{display:block}
+.lock-banner .m-eyebrow{justify-content:center;display:flex}
+.lock-banner h3{font-size:1.15rem;margin-bottom:10px}
+.lock-banner .m-price{font-size:1.8rem;margin-bottom:2px}
+.lock-banner .m-price-note{margin-bottom:16px}
+.lock-banner p.m-body{font-size:0.86rem;margin-bottom:18px}
+.lock-banner .m-actions{flex-direction:row;justify-content:center;flex-wrap:wrap}
+.lock-banner .m-actions a{flex:1 1 auto}
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -414,6 +486,20 @@ footer{
       </div>
     </div>
   </section>
+
+  <div class="locked-content is-locked" id="lock-wrapper">
+    <div class="lock-banner">
+      <span class="m-eyebrow">Versão de demonstração</span>
+      <h3>O resto do site está bloqueado.</h3>
+      <div class="m-price">1.000 €</div>
+      <div class="m-price-note">Valor para desenvolvimento do site final e completo</div>
+      <p class="m-body">Para desbloquear e ver o projecto completo, formalize o pagamento connosco.</p>
+      <div class="m-actions">
+        <a class="btn-primary" href="mailto:gestsemba@gmail.com?subject=Projecto%20final%20do%20site">Falar por e-mail</a>
+        <a class="btn-ghost" href="https://brotherscode.pro/" target="_blank" rel="noopener">Ver Brothers Code</a>
+      </div>
+    </div>
+    <div class="locked-inner">
 
   <section id="sobre">
     <div class="section-head">
@@ -582,6 +668,9 @@ footer{
     </div>
   </section>
 
+    </div>
+  </div>
+
 </main>
 
 <footer id="contactos">
@@ -653,4 +742,4 @@ footer{
 </script>
 
 </body>
-</html>*/
+</html>
