@@ -177,6 +177,9 @@ nav.primary a:hover,nav.primary a:focus-visible{color:var(--ink)}
   background:var(--green);color:#fff;padding:13px 22px;border-radius:3px;
   font-weight:600;font-size:0.92rem;text-decoration:none;display:inline-block;
 }
+button.btn-primary{
+  border:none;cursor:pointer;font-family:inherit;appearance:none;
+}
 .btn-ghost{
   border:1px solid var(--line);padding:12px 21px;border-radius:3px;
   font-weight:600;font-size:0.92rem;text-decoration:none;color:var(--ink);
@@ -415,8 +418,14 @@ footer{
 .lock-banner .m-price{font-size:1.8rem;margin-bottom:2px}
 .lock-banner .m-price-note{margin-bottom:16px}
 .lock-banner p.m-body{font-size:0.86rem;margin-bottom:18px}
-.lock-banner .m-actions{flex-direction:row;justify-content:center;flex-wrap:wrap}
-.lock-banner .m-actions a{flex:1 1 auto}
+.lock-banner .m-actions{flex-direction:column}
+.lock-banner .m-actions a,
+.lock-banner .m-actions button{width:100%;white-space:nowrap}
+@media (min-width:420px){
+  .lock-banner .m-actions{flex-direction:row;justify-content:center;flex-wrap:wrap}
+  .lock-banner .m-actions a,
+  .lock-banner .m-actions button{flex:1 1 auto;width:auto}
+}
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
