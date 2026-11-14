@@ -421,6 +421,21 @@ footer{
 .lock-banner{
   display:none;
 }
+.footer-locked{position:relative;overflow:hidden}
+.footer-locked .footer-inner{
+  filter:blur(22px) saturate(0.6);
+  user-select:none;
+  pointer-events:none;
+  transform:scale(1.05);
+}
+.footer-locked::before{
+  content:"";
+  position:absolute;inset:0;
+  background:var(--bg);
+  opacity:0.8;
+  z-index:5;
+  pointer-events:none;
+}
 .locked-content.is-locked .lock-banner{
   display:block;
   position:absolute;
@@ -705,8 +720,8 @@ footer{
 
 </main>
 
-<footer id="contactos">
-  <div class="wrap">
+<footer id="contactos" class="footer-locked">
+  <div class="wrap footer-inner">
     <div class="footer-grid">
       <div>
         <h4>Contacto</h4>
