@@ -398,8 +398,17 @@ footer{
   overflow:hidden;
 }
 .locked-content.is-locked .locked-inner{
-  filter:blur(7px);
+  filter:blur(22px) saturate(0.6);
   user-select:none;
+  pointer-events:none;
+  transform:scale(1.05);
+}
+.locked-content.is-locked::before{
+  content:"";
+  position:absolute;inset:0;
+  background:var(--bg);
+  opacity:0.72;
+  z-index:10;
   pointer-events:none;
 }
 .locked-content.is-locked::after{
@@ -407,6 +416,7 @@ footer{
   position:absolute;left:0;right:0;bottom:0;height:120px;
   background:linear-gradient(0deg, var(--bg), transparent);
   pointer-events:none;
+  z-index:11;
 }
 .lock-banner{
   display:none;
